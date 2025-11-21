@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import NoteApp from './components/NoteApp'
+import NoteApp from './components/NOTES/NoteApp.jsx'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import HomePage from './components/HomePage.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <NoteApp />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/note' element={<NoteApp />} />
+      </Routes>
     </>
   )
 }
