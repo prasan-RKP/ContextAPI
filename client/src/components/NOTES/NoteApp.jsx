@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, FileText, Trash2, Edit3, Sparkles } from 'lucide-react';
+import { Plus, FileText, Sparkles } from 'lucide-react';
 import CreateNote from './docs/CreateNote.jsx';
 import MyNotes from './docs/MyNotes.jsx';
 // import NotesList from './NotesList.jsx'; // <-- Make sure you have this component
@@ -171,7 +171,7 @@ const NoteApp = () => {
           {/* Notes View */}
           {view === 'notes' && (
             <MyNotes 
-            editingNote={editingNote} filteredNotes={filteredNotes} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+            editingNote={editingNote} updateNote={updateNote} setEditingNote={setEditingNote} filteredNotes={filteredNotes} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           )}
 
           {/* Add Note View */}
