@@ -103,14 +103,18 @@ const NotesProvider = ({ children }) => {
     const editNote = async (uid, data) => {
         setLoading(true);
         try {
-            const res = axiosInstance.put(`/edit/${uid}`, {
+            const res = await axiosInstance.put(`/edit/${uid}`, {
                 title: data.title,
                 content: data.content
             })
 
             dispatchNote({
                 type: "EDIT_NOTE",
-                payload: {uid, newTitle: data.newTitle, newContent: data.newContent}
+                payload: {
+                    uid,
+                    title: res.data.title,
+                    content: res.data.content
+                }
             })
             
         } catch (error) {

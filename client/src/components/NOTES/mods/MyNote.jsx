@@ -6,7 +6,7 @@ import EditNote from './EditNote'
 const MyNote = ({ note, i, updateNote }) => {
 
   const [editingNote, setEditingNote] = useState(null);
-  
+
 
   return (
     <motion.div

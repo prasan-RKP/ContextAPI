@@ -61,4 +61,19 @@ router.get("/allNote", async (req, res) => {
 });
 
 
+router.put("/edit/:id", async(req, res)=> {
+  try {
+    const {id} = req.params;
+    
+    const {title, content} = req.body;
+
+    console.log(`The title -> ${title} & Content -> ${content}`);
+
+  } catch (error) {
+    console.log("Error in Editing Notes", error);
+    return res.status(500).json({message: "Interval Server Error (Edit Note)"})
+  }
+})
+
+
 export default router;
